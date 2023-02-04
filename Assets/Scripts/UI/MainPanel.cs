@@ -7,6 +7,8 @@ namespace UI
 {
     public class MainPanel : BasePanel
     {
+        [SerializeField] string scene;
+
         private CanvasGroup _canvasGroup;
 
         private void Start()
@@ -29,7 +31,7 @@ namespace UI
 
         public void OnStartGame()
         {
-            SceneManager.LoadScene(1);
+            Initiate.Fade(scene, Color.white, 1.0f);
         }
 
         public void OnPushPanel(string panelTypeString)
