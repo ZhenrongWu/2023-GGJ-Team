@@ -3,91 +3,94 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : BaseCharacter
+namespace GGJ.Characters
 {
-    [SerializeField] GameObject? model;
-    [Space(15)]
-    [SerializeField] float maxSpeed = 1.0f;
-    [SerializeField] float minMoveThreshold = -.1f;
-    [SerializeField] float maxMoveThreshold = .1f;
-    [SerializeField] LayerMask groundLayer;
-
-    Vector2 movement;
-    Rigidbody2D? _rigidbody2D;
-    Animator? _animator;
-
-    private readonly int MoveSpeed = Animator.StringToHash("MoveSpeed");
-    private readonly int Fall = Animator.StringToHash("Fall");
-
-    protected override void Initialize()
+    public class Character : BaseCharacter
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
-        _animator = model?.GetComponent<Animator>();
-    }
+        [SerializeField] GameObject? model;
+        [Space(15)]
+        [SerializeField] float maxSpeed = 1.0f;
+        [SerializeField] float minMoveThreshold = -.1f;
+        [SerializeField] float maxMoveThreshold = .1f;
+        [SerializeField] LayerMask groundLayer;
 
-    protected override void FixedUpdate()
-    {
-        Move();
-        FlipCharacter();
-    }
+        Vector2 movement;
+        Rigidbody2D? _rigidbody2D;
+        Animator? _animator;
 
-    public void Move()
-    {
-        if (_rigidbody2D == null)
-            return;
+        private readonly int MoveSpeed = Animator.StringToHash("MoveSpeed");
+        private readonly int Fall = Animator.StringToHash("Fall");
 
-        if (maxMoveThreshold > movement.x && movement.x > minMoveThreshold)
-            return;
+        protected override void Initialize()
+        {
+            _rigidbody2D = GetComponent<Rigidbody2D>();
+            _animator = model?.GetComponent<Animator>();
+        }
 
-        _rigidbody2D.velocity = new Vector2(movement.x, _rigidbody2D.velocity.y);
-    }
+        protected override void FixedUpdate()
+        {
+            Move();
+            FlipCharacter();
+        }
 
-    public void AppendVelocityX(float value)
-    {
-        if (!IsGround())
-            return;
-        movement.x = value;
-    }
+        public void Move()
+        {
+            if (_rigidbody2D == null)
+                return;
 
-    public void AddForce(Vector2 force)
-    {
-        if (_rigidbody2D == null)
-            return; 
-        _rigidbody2D.AddForce(force);
-    }
+            if (maxMoveThreshold > movement.x && movement.x > minMoveThreshold)
+                return;
 
-    public void ResetVelocity()
-    {
-        if (_rigidbody2D == null)
-            return;
-        movement = Vector2.zero;
-        _rigidbody2D.velocity = Vector2.zero;        
-    }
+            _rigidbody2D.velocity = new Vector2(movement.x, _rigidbody2D.velocity.y);
+        }
 
-    public void FlipCharacter()
-    {
-        if (model == null || _rigidbody2D == null)
-            return;
+        public void AppendVelocityX(float value)
+        {
+            if (!IsGround())
+                return;
+            movement.x = value;
+        }
 
-        Vector2 localScale = model.transform.localScale;
-        localScale.x = movement.x >= 0 ? 
-            Mathf.Abs(localScale.x) : 
-            -Mathf.Abs(localScale.x);
-        model.transform.localScale = localScale;
-    }
+        public void AddForce(Vector2 force)
+        {
+            if (_rigidbody2D == null)
+                return;
+            _rigidbody2D.AddForce(force);
+        }
 
-    public bool HasMove()
-        => !(maxMoveThreshold > movement.x && movement.x > minMoveThreshold);
+        public void ResetVelocity()
+        {
+            if (_rigidbody2D == null)
+                return;
+            movement = Vector2.zero;
+            _rigidbody2D.velocity = Vector2.zero;
+        }
 
-    public bool IsGround()
-        => Physics2D.Raycast(transform.position, Vector2.down, .1f, groundLayer).collider != null;
+        public void FlipCharacter()
+        {
+            if (model == null || _rigidbody2D == null)
+                return;
 
-    protected override void PlayAnimation()
-    {
-        if (_animator == null)
-            return;
+            Vector2 localScale = model.transform.localScale;
+            localScale.x = movement.x >= 0 ?
+                Mathf.Abs(localScale.x) :
+                -Mathf.Abs(localScale.x);
+            model.transform.localScale = localScale;
+        }
 
-        _animator.SetFloat(MoveSpeed, HasMove() ? Mathf.Abs(movement.x) : 0f);
-        _animator.SetBool(Fall, !IsGround());
+        public bool HasMove()
+            => !(maxMoveThreshold > movement.x && movement.x > minMoveThreshold);
+
+        public bool IsGround()
+            => Physics2D.Raycast(transform.position, Vector2.down, .1f, groundLayer).collider != null;
+
+        protected override void PlayAnimation()
+        {
+            if (_animator == null)
+                return;
+
+            _animator.SetFloat(MoveSpeed, HasMove() ? Mathf.Abs(movement.x) : 0f);
+            _animator.SetBool(Fall, !IsGround());
+        }
     }
 }
