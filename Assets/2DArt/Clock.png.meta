@@ -1,0 +1,274 @@
+fileFormatVersion: 2
+guid: c2452c58ba815004c92e7ef96319785f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ClockSprites_7
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 1072
+        width: 583
+        height: 581
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b46bb835c04ac84aa1a518d82a3a303
+      internalID: -1453318625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockSprites_25
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 411
+        width: 621
+        height: 621
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78fd3992358f0e34bbe5e01971780b9d
+      internalID: -2020183520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockSprites_27
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 81
+        width: 91
+        height: 255
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cef03ebaab668745a2044177978a6e0
+      internalID: -2030362356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockSprites_30
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 78
+        width: 70
+        height: 197
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a122ab7f5ceece9439e81df5fa4c2c9e
+      internalID: -192724489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ClockSprites_36: 4055741
+      ClockSprites_47: -762553853
+      ClockSprites_4: 97031509
+      ClockSprites_45: 781218214
+      ClockSprites_14: 913478355
+      ClockSprites_22: -1118725810
+      ClockSprites_11: -1365306557
+      ClockSprites_21: 219324438
+      ClockSprites_46: 63692548
+      ClockSprites_24: 2043043379
+      ClockSprites_37: 1875983546
+      ClockSprites_30: -192724489
+      ClockSprites_26: -400140588
+      ClockSprites_44: -1926007342
+      ClockSprites_17: 141974860
+      ClockSprites_23: -633012189
+      ClockSprites_33: -1037824842
+      ClockSprites_39: 1852024811
+      ClockSprites_51: -1394825185
+      ClockSprites_7: -1453318625
+      ClockSprites_28: 847929144
+      ClockSprites_18: 828779062
+      ClockSprites_3: 1560988604
+      ClockSprites_41: -839982361
+      ClockSprites_31: 2114522987
+      ClockSprites_16: 1969357400
+      ClockSprites_5: 41619950
+      ClockSprites_9: -1870222673
+      ClockSprites_8: 515153443
+      ClockSprites_32: -1727077793
+      ClockSprites_42: -1323308142
+      ClockSprites_52: -1034929337
+      ClockSprites_6: 383503343
+      ClockSprites_34: 1905876603
+      ClockSprites_2: 994819983
+      ClockSprites_0: 1777297496
+      ClockSprites_10: -596404563
+      ClockSprites_49: -973082663
+      ClockSprites_13: -871204652
+      ClockSprites_29: 2005235067
+      ClockSprites_40: 1755475529
+      ClockSprites_1: 1684259984
+      ClockSprites_35: 1093095992
+      ClockSprites_20: -1399280703
+      ClockSprites_27: -2030362356
+      ClockSprites_38: -646931682
+      ClockSprites_48: -658508058
+      ClockSprites_43: 1941990557
+      ClockSprites_54: -1222335946
+      ClockSprites_53: -438632985
+      ClockSprites_19: 1049518320
+      ClockSprites_50: -1471513038
+      ClockSprites_25: -2020183520
+      ClockSprites_15: 625082097
+      ClockSprites_12: -1188314279
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
