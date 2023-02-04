@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Platform_TreeWhip : MonoBehaviour
+public class Platform_TreeWhip : Platform_Base
 {
     // Start is called before the first frame update
     void Start()

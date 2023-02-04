@@ -2,16 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Platform_Bird : MonoBehaviour
+public class Platform_Bird : Platform_Base
 {
 	[SerializeField] private float mWaitDownTime;
 	[SerializeField] private float mFallDownSpeed;
-	private Rigidbody2D mPlatform;
-	
-	private void Awake()
-	{
-		mPlatform = GetComponent<Rigidbody2D>() == null ? gameObject.AddComponent<Rigidbody2D>() : GetComponent<Rigidbody2D>();
-	}
 
 	IEnumerator FallDown () //On Trigger Todo it
 	{
