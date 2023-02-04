@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7350869954203315406}
   - component: {fileID: 6894145850654711634}
   - component: {fileID: 177730605669436035}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Platform_Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6986088706627847221}
   - component: {fileID: 2900219753326515489}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: TreeLink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7240264389315947102}
   - component: {fileID: 3221941581382990666}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: SpriteRender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
