@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace GGJ.Debug
+namespace GGJ.DebugTool
 {
     public class CharacterMoveDebug : MonoBehaviour
     {
