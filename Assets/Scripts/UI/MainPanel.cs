@@ -39,10 +39,5 @@ namespace UI
             UIPanelType panelType = (UIPanelType)Enum.Parse(typeof(UIPanelType), panelTypeString);
             UIManager.Instance.PushPanel(panelType);
         }
-
-        public void OnExitGame()
-        {
-            Debug.Log("Exit Game");
-        }
     }
 }
