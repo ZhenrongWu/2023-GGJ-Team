@@ -1,3 +1,4 @@
+using GGJ.Characters;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,20 +10,22 @@ public class GyroMovement : MonoBehaviour
     private float dirX;
 
     Rigidbody2D rb;
-
+    Character character;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        character = GetComponent<Character>();
     }
 
     void Update()
     {
-        dirX = Input.acceleration.x * movespeed;
+        character.AppendVelocityX(Input.acceleration.x);
+        //dirX = Input.acceleration.x * movespeed;
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(dirX,fallspeed*Time.deltaTime);
+        //rb.velocity = new Vector2(dirX,fallspeed*Time.deltaTime);
 
     }
 }
