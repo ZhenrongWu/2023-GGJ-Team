@@ -9,7 +9,7 @@ namespace GGJ.Characters
     {
         [SerializeField] GameObject? model;
         [Space(15)]
-        [SerializeField] float maxSpeed = 1.0f;
+        [SerializeField] float speed = 1f;
         [SerializeField] float minMoveThreshold = -.1f;
         [SerializeField] float maxMoveThreshold = .1f;
         [SerializeField] LayerMask groundLayer;
@@ -41,7 +41,7 @@ namespace GGJ.Characters
             if (maxMoveThreshold > movement.x && movement.x > minMoveThreshold)
                 return;
 
-            _rigidbody2D.velocity = new Vector2(movement.x, _rigidbody2D.velocity.y);
+            _rigidbody2D.velocity = new Vector2(movement.x * speed, _rigidbody2D.velocity.y);
         }
 
         public void AppendVelocityX(float value)
