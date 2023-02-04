@@ -460,7 +460,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 20
+  m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -907,6 +907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04556b91b064793948b0c70ffad390f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: Gyro
 --- !u!225 &6431191284477960715
 CanvasGroup:
   m_ObjectHideFlags: 0
