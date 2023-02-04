@@ -29,9 +29,19 @@ namespace GGJ.Characters
 
         protected override void FixedUpdate()
         {
+#if UNITY_EDITOR
+            DebugMove();
+#endif
             Move();
             FlipCharacter();
         }
+
+#if UNITY_EDITOR
+        public void DebugMove()
+        {
+            AppendVelocityX(Input.GetAxis("Horizontal"));
+        }
+#endif
 
         public void Move()
         {
@@ -72,7 +82,7 @@ namespace GGJ.Characters
                 return;
 
             Vector2 localScale = model.transform.localScale;
-            localScale.x = movement.x >= 0 ?
+            localScale.x = movement.x > 0f ?
                 Mathf.Abs(localScale.x) :
                 -Mathf.Abs(localScale.x);
             model.transform.localScale = localScale;
