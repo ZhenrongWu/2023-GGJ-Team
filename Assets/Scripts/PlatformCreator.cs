@@ -14,7 +14,7 @@ public class PlatformCreator : MonoBehaviour
 	[SerializeField] private Vector2 mXposOutLimit;
 	[SerializeField] private Vector2 mXposInLimit ;
 	[SerializeField] private Vector2 mYposLimit   ;
-	[SerializeField] private float   mYposRang    = 1;
+	[SerializeField] private int   mYposRang    = 1;
 	[SerializeField] private int mPlatformPoolLimit = 10;
 	[SerializeField] private float mInstantiateIntervals = 1.0f;
 
@@ -27,7 +27,7 @@ public class PlatformCreator : MonoBehaviour
 
 	private void Start()
 	{
-		for(int aIndex = (int)mYposLimit.x; aIndex<=(int)mYposLimit.y; aIndex++)
+		for(int aIndex = (int)mYposLimit.x; aIndex<=(int)mYposLimit.y; aIndex+= mYposRang)
 		{
 			InstantiatePlatform();
 		}
@@ -79,7 +79,7 @@ public class PlatformCreator : MonoBehaviour
 				mPlatformPool.Add(aPlatform);
 			}
 		}
-		mYpos++;
+		mYpos+= mYposRang;
 		//PoolUpdate();
 	}
 
