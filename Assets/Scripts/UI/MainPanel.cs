@@ -1,6 +1,7 @@
 ﻿using System;
 using UI.Base;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace UI
 {
@@ -26,10 +27,20 @@ namespace UI
             _canvasGroup.blocksRaycasts = true;
         }
 
+        public void OnStartGame()
+        {
+            SceneManager.LoadScene(1);
+        }
+
         public void OnPushPanel(string panelTypeString)
         {
             UIPanelType panelType = (UIPanelType)Enum.Parse(typeof(UIPanelType), panelTypeString);
             UIManager.Instance.PushPanel(panelType);
+        }
+
+        public void OnExitGame()
+        {
+            Debug.Log("Exit Game");
         }
     }
 }
