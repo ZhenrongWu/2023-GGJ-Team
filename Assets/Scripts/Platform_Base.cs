@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Platform_Base : MonoBehaviour
 {
-	[HideInInspector] public Rigidbody2D    mPlatform    ;
+	public Rigidbody2D    mPlatform    ;
 	[HideInInspector] public SpriteRenderer mRender      ;
 	[HideInInspector] public GameObject     mTreeLink    ;
 	[SerializeField]  private string         Name_TreeLink = "TreeLink";
 
 	private void Awake()
 	{
-		mPlatform = GetComponent<Rigidbody2D>() == null ? gameObject.AddComponent<Rigidbody2D>() : GetComponent<Rigidbody2D>();
+		//mPlatform = GetComponent<Rigidbody2D>() == null ? gameObject.AddComponent<Rigidbody2D>() : GetComponent<Rigidbody2D>();
 		mTreeLink = mTreeLink==null? transform.Find(Name_TreeLink).gameObject : mTreeLink;
 	}
 
@@ -33,7 +33,7 @@ public class Platform_Base : MonoBehaviour
 		mKnifeList.Sort();
 		GameObject aTarget;
 		mKnifeMap.TryGetValue(mKnifeList[0], out aTarget);
-		mTreeLink.gameObject.transform.position = new Vector2(aTarget.transform.position.x, mTreeLink.gameObject.transform.position.y);
+		//mTreeLink.gameObject.transform.position = new Vector2(aTarget.transform.position.x, mTreeLink.gameObject.transform.position.y);
 	}
 
 	private List<float> mKnifeList;
