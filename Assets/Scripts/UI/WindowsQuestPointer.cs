@@ -8,7 +8,7 @@ namespace UI
     {
         [SerializeField] private Transform targetTrans;
         [SerializeField] private Camera    playerCamera;
-        [SerializeField] private Sprite    arrowSprite, crossSprite;
+        [SerializeField] private Sprite    arrowSprite;
 
         private RectTransform _pointerRectTrans;
         private Image         _pointerImage;
@@ -57,7 +57,6 @@ namespace UI
             }
             else
             {
-                _pointerImage.sprite = crossSprite;
                 Vector3 pointerWorldPos = playerCamera.ScreenToWorldPoint(targetPosScreenPoint);
                 _pointerRectTrans.position = pointerWorldPos;
                 var pointerRectLocalPos = _pointerRectTrans.localPosition;
