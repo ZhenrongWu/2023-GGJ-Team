@@ -1,3 +1,5 @@
+using GGJ;
+using GGJ.Characters;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +10,7 @@ public class Platform_Base : MonoBehaviour
 	[HideInInspector] public SpriteRenderer mRender      ;
 	[HideInInspector] public GameObject     mTreeLink    ;
 	[SerializeField]  private string         Name_TreeLink = "TreeLink";
+	[SerializeField]  private AudioClip?	mCollisionSE;
 
 	private void Awake()
 	{
@@ -38,4 +41,13 @@ public class Platform_Base : MonoBehaviour
 
 	private List<float> mKnifeList;
 	private Dictionary<float, GameObject> mKnifeMap;
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<Character>())
+        {
+			if (mCollisionSE)
+				SoundManager.Instance?.PlayOneShot(mCollisionSE);
+        }
+    }
 }
