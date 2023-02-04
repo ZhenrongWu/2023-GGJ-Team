@@ -1,0 +1,12 @@
+{
+  "uiPanelInfoList": [
+    {
+      "uiPanelTypeString": "Main",
+      "path": "UIPanel/MainPanel"
+    },
+    {
+      "uiPanelTypeString": "Guide",
+      "path": "UIPanel/GuidePanel"
+    }
+  ]
+}
