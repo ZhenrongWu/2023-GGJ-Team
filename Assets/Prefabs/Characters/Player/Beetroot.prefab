@@ -47,11 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df8009e9f0245c4181485cf5bc8bde1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactiveLayer:
-    serializedVersion: 2
-    m_Bits: 0
   model: {fileID: 3536144113456440137}
-  maxSpeed: 1
+  speed: 1
   minMoveThreshold: -0.1
   maxMoveThreshold: 0.1
   groundLayer:
@@ -87,7 +84,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 3536144112359828268}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1ca9d8d7501f2b6489dabc6bca0d6bc2, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

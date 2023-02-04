@@ -28,5 +28,11 @@ public class Platform_Bird : Platform_Base
 		{
 			StartCoroutine(FallDown());
 		}
-	}
+
+        var Woodpecker = GetComponentInChildren<BaseCharacter>();
+        if (Woodpecker != null)
+        {
+            Woodpecker.transform.SetParent(transform.parent);
+        }
+    }
 }
