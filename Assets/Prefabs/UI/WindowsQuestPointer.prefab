@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1099078091744770492}
   - component: {fileID: 6365342255012209498}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: WindowsQuestPointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,9 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTrans: {fileID: 0}
-  playerCamera: {fileID: 0}
+  uiCamera: {fileID: 0}
   arrowSprite: {fileID: 21300000, guid: 1b0faa511ba75624dae700b9eb82f135, type: 3}
-  crossSprite: {fileID: 0}
 --- !u!1 &1099078092641643685
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,7 +64,7 @@ GameObject:
   - component: {fileID: 1099078092641643686}
   - component: {fileID: 1099078092641643680}
   - component: {fileID: 1099078092641643687}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Pointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
