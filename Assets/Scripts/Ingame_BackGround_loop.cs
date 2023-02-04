@@ -13,6 +13,6 @@ public class Ingame_BackGround_loop : MonoBehaviour
 	}
 	private void FixedUpdate()
 	{
-		mRollTexture.material.mainTextureOffset = new Vector2(0, Time.time * mRollSpeed);
+		mRollTexture.material.mainTextureOffset = new Vector2(0, Time.deltaTime * mRollSpeed);
 	}
 }
