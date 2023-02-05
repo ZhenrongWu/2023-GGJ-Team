@@ -7,7 +7,7 @@ namespace UI
     public class WindowsQuestPointer : MonoBehaviour
     {
         [SerializeField] private Transform targetTrans;
-        [SerializeField] private Camera    playerCamera;
+        [SerializeField] private Camera    uiCamera;
         [SerializeField] private Sprite    arrowSprite;
 
         private RectTransform _pointerRectTrans;
@@ -29,7 +29,7 @@ namespace UI
             float   angle = UtilsClass.GetAngleFromVector(dir);
             _pointerRectTrans.localEulerAngles = new Vector3(0, 0, angle);
 
-            float   borderSize           = 50;
+            float   borderSize           = 100;
             Vector3 targetPosScreenPoint = Camera.main!.WorldToScreenPoint(targetTransPos);
             bool isOffScreen = targetPosScreenPoint.x              <= borderSize   ||
                                targetPosScreenPoint.x - borderSize >= Screen.width ||
@@ -49,7 +49,7 @@ namespace UI
                 if (cappedTargetScreenPos.y >= Screen.height - borderSize)
                     cappedTargetScreenPos.y = Screen.height - borderSize;
 
-                Vector3 pointerWorldPos = playerCamera.ScreenToWorldPoint(cappedTargetScreenPos);
+                Vector3 pointerWorldPos = uiCamera.ScreenToWorldPoint(cappedTargetScreenPos);
                 _pointerRectTrans.position = pointerWorldPos;
                 var pointerRectLocalPos = _pointerRectTrans.localPosition;
                 pointerRectLocalPos             = new Vector3(pointerRectLocalPos.x, pointerRectLocalPos.y, 0);
@@ -57,7 +57,8 @@ namespace UI
             }
             else
             {
-                Vector3 pointerWorldPos = playerCamera.ScreenToWorldPoint(targetPosScreenPoint);
+                _pointerImage.enabled = false;
+                Vector3 pointerWorldPos = uiCamera.ScreenToWorldPoint(targetPosScreenPoint);
                 _pointerRectTrans.position = pointerWorldPos;
                 var pointerRectLocalPos = _pointerRectTrans.localPosition;
                 pointerRectLocalPos             = new Vector3(pointerRectLocalPos.x, pointerRectLocalPos.y, 0);
