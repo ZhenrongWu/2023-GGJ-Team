@@ -7,24 +7,39 @@ namespace GGJ.Characters
 {
     public class Character : BaseCharacter
     {
-        [SerializeField] GameObject? model;
+        [SerializeField]         GameObject? model;
+        [SerializeField] private Transform[] spawnPoints;
+
         [Space(15)]
         [SerializeField] float speed = 1f;
-        [SerializeField] float minMoveThreshold = -.1f;
-        [SerializeField] float maxMoveThreshold = .1f;
+
+        [SerializeField] float     minMoveThreshold = -.1f;
+        [SerializeField] float     maxMoveThreshold = .1f;
         [SerializeField] LayerMask groundLayer;
 
-        Vector2 movement;
+        Vector2      movement;
         Rigidbody2D? _rigidbody2D;
-        Animator? _animator;
+        Animator?    _animator;
 
         private readonly int MoveSpeed = Animator.StringToHash("MoveSpeed");
-        private readonly int Fall = Animator.StringToHash("Fall");
+        private readonly int Fall      = Animator.StringToHash("Fall");
 
         protected override void Initialize()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
-            _animator = model?.GetComponent<Animator>();
+            _animator    = model?.GetComponent<Animator>();
+
+            int randomNumber = Random.Range(0, 2);
+            if (randomNumber == 0)
+            {
+                model!.transform.localScale = new Vector3(-.05f, .05f, 1); 
+                transform.position         = spawnPoints[0].position;
+            }
+            else
+            {
+                model!.transform.localScale = new Vector3(.05f, .05f, 1); 
+                transform.position         = spawnPoints[1].position;
+            }
         }
 
         protected override void FixedUpdate()
@@ -81,7 +96,7 @@ namespace GGJ.Characters
         {
             if (_rigidbody2D == null)
                 return;
-            movement = Vector2.zero;
+            movement              = Vector2.zero;
             _rigidbody2D.velocity = Vector2.zero;
         }
 
@@ -91,9 +106,7 @@ namespace GGJ.Characters
                 return;
 
             Vector2 localScale = model.transform.localScale;
-            localScale.x = movement.x > 0f ?
-                Mathf.Abs(localScale.x) :
-                -Mathf.Abs(localScale.x);
+            localScale.x               = movement.x > 0f ? Mathf.Abs(localScale.x) : -Mathf.Abs(localScale.x);
             model.transform.localScale = localScale;
         }
 
