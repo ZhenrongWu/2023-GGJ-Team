@@ -13,13 +13,15 @@ public class Platform_Bird : Platform_Base
 	{
 		mAni = GetComponent<Animation>() ==null ? gameObject.AddComponent<Animation>() :GetComponent<Animation>();
 		mAni.Stop();
+		mPlatform.bodyType = RigidbodyType2D.Kinematic;
 	}
 	IEnumerator FallDown () //On Trigger Todo it
 	{
 		yield return new WaitForSeconds(mWaitDownTime);
-		mPlatform.gravityScale = 1; 
+		mPlatform.bodyType = RigidbodyType2D.Dynamic;
 		mAni.Play();
-		Destroy(gameObject,3);
+		mPlatform.gravityScale = 1; 
+		Destroy(gameObject,1);
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
