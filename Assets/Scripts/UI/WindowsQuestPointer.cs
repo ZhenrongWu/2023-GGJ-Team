@@ -1,4 +1,5 @@
-﻿using CodeMonkey.Utils;
+﻿using System;
+using CodeMonkey.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,10 +7,10 @@ namespace UI
 {
     public class WindowsQuestPointer : MonoBehaviour
     {
-        [SerializeField] private Transform targetTrans;
-        [SerializeField] private Camera    uiCamera;
-        [SerializeField] private Sprite    arrowSprite;
+        [SerializeField] private Camera uiCamera;
+        [SerializeField] private Sprite arrowSprite;
 
+        private Transform     _targetTrans;
         private RectTransform _pointerRectTrans;
         private Image         _pointerImage;
 
@@ -19,9 +20,14 @@ namespace UI
             _pointerImage     = transform.Find("Pointer").GetComponent<Image>();
         }
 
+        private void Start()
+        {
+            _targetTrans = GameObject.Find("Mound(Clone)").transform;
+        }
+
         private void Update()
         {
-            var     targetTransPos = targetTrans.position;
+            var     targetTransPos = _targetTrans.position;
             Vector3 toPos          = targetTransPos;
             Vector3 fromPos        = Camera.main!.transform.position;
             fromPos.z = 0;

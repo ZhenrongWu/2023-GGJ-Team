@@ -5,7 +5,7 @@ public class DestinationSpawner : MonoBehaviour
     [SerializeField] private Transform  targetTrans1, targetTrans2;
     [SerializeField] private GameObject puddle,       mound;
 
-    private void Start()
+    private void Awake()
     {
         int randomNumber = Random.Range(0, 2);
         if (randomNumber == 0)
