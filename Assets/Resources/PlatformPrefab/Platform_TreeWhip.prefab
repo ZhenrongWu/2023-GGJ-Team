@@ -178,9 +178,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7402592415202583890}
   - component: {fileID: 7402592415202583895}
-  - component: {fileID: 7402592415202583893}
   - component: {fileID: 7402592415202583892}
   - component: {fileID: 9166835648011336959}
+  - component: {fileID: 1275189996237914859}
   m_Layer: 8
   m_Name: Platform_TreeWhip
   m_TagString: Untagged
@@ -222,32 +222,7 @@ MonoBehaviour:
   mRender: {fileID: 0}
   mTreeLink: {fileID: 0}
   Name_TreeLink: TreeLink
---- !u!61 &7402592415202583893
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7402592415202583888}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 11, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 35.079998, y: 24.802656}
-    newSize: {x: 35.079998, y: 24.802656}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 25, y: 3}
-  m_EdgeRadius: 0
+  mCollisionSE: {fileID: 0}
 --- !u!50 &7402592415202583892
 Rigidbody2D:
   serializedVersion: 4
@@ -280,9 +255,9 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 12.410419, y: 3.4888728}
+  m_Offset: {x: 11.625561, y: 1.003485}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -293,8 +268,27 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17.048817, y: 7.9777455}
+  m_Size: {x: 23.58931, y: 3.006971}
   m_EdgeRadius: 0
+--- !u!251 &1275189996237914859
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7402592415202583888}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 150
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &7999469276195227895
 GameObject:
   m_ObjectHideFlags: 0
