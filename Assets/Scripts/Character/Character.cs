@@ -39,7 +39,11 @@ namespace GGJ.Characters
 #if UNITY_EDITOR
         public void DebugMove()
         {
-            AppendVelocityX(Input.GetAxis("Horizontal"));
+            float horizontal = Input.GetAxis("Horizontal");
+            if (horizontal != 0f)
+            {
+                AppendVelocityX(horizontal);
+            }
         }
 #endif
 
@@ -66,6 +70,11 @@ namespace GGJ.Characters
             if (_rigidbody2D == null)
                 return;
             _rigidbody2D.AddForce(force);
+        }
+
+        public void SetSpeed(float value)
+        {
+            speed = value;
         }
 
         public void ResetVelocity()
