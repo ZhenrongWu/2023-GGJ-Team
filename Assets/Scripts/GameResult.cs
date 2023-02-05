@@ -1,4 +1,5 @@
 using DG.Tweening;
+using GGJ;
 using GGJ.Characters;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -11,8 +12,13 @@ public class GameResult : MonoBehaviour
     [SerializeField] private Sprite     dieResultSprite;
     [SerializeField] private GameObject restartButton;
 
+    [SerializeField] private AudioClip puddleSE;
+    [SerializeField] private AudioClip moundSE;
+    [SerializeField] private AudioClip dieSE;
+
     private Image     _resultImage;
     private Character _character;
+    private bool isResult;
 
     private void Start()
     {
@@ -22,17 +28,26 @@ public class GameResult : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
+        if (isResult)
+            return;
+
         if (col.transform.name == "Puddle(Clone)")
         {
+            SoundManager.Instance?.PlayBGM(puddleSE, false);
             SetResultImage(puddleResultSprite);
+            isResult = true;
         }
         else if (col.transform.name == "Mound(Clone)")
         {
+            SoundManager.Instance?.PlayBGM(moundSE, false);
             SetResultImage(moundResultSprite);
+            isResult = true;
         }
         else if (col.transform.name == "DieArea")
         {
+            SoundManager.Instance?.PlayBGM(dieSE, false);
             SetResultImage(dieResultSprite);
+            isResult = true;
         }
     }
 
@@ -41,6 +56,10 @@ public class GameResult : MonoBehaviour
         _character.SetSpeed(0);
 
         _resultImage.sprite = sprite;
-        _resultImage.DOFade(1, 3).OnComplete(() => restartButton.SetActive(true));
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(_resultImage.DOFade(1, 3))
+            .SetDelay(1f)
+            .OnComplete(() => restartButton.SetActive(true))
+            .SetLink(_resultImage.gameObject);
     }
 }

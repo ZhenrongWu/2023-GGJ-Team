@@ -32,6 +32,18 @@ namespace GGJ
             audioSourceBGM?.Play();
         }
 
+        public void PlayBGM(AudioClip clip, bool loop)
+        {
+            if (audioSourceBGM == null)
+                return;
+
+            if (audioSourceBGM.isPlaying)
+                audioSourceBGM.Stop();
+            audioSourceBGM.clip = clip;
+            audioSourceBGM.loop = loop;
+            audioSourceBGM.Play();
+        }
+
         public void PlayOneShot(AudioClip clip)
         {
             audioSourceSE?.PlayOneShot(clip);

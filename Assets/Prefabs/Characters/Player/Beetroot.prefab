@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3536144112359828272}
   - component: {fileID: 3536144112359828273}
   - component: {fileID: -7801634821372921459}
+  - component: {fileID: 3621909895198680363}
   m_Layer: 0
   m_Name: Beetroot
   m_TagString: Untagged
@@ -106,6 +107,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movespeed: 20
   fallspeed: -10
+--- !u!114 &3621909895198680363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3536144112359828268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7222440df0119e43b93b897a8c41483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puddleResultSprite: {fileID: 21300000, guid: f1b6e10a6c00a4044899abdcb4d12d7e, type: 3}
+  moundResultSprite: {fileID: 21300000, guid: 7c6817ee2bac303429cd6037a726d574, type: 3}
+  dieResultSprite: {fileID: 21300000, guid: 63178a4a38f3d0b4fb18556bb62d6045, type: 3}
+  puddleSE: {fileID: 8300000, guid: 68fbc8bb3a32694428c7e2a76000995c, type: 3}
+  moundSE: {fileID: 8300000, guid: 1d194248496c2064ab858309507084c1, type: 3}
+  dieSE: {fileID: 8300000, guid: a96d7a67d34c30245a2f7ea2f0591167, type: 3}
 --- !u!1 &3536144113456440137
 GameObject:
   m_ObjectHideFlags: 0
